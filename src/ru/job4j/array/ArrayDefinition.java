@@ -10,8 +10,8 @@ public class ArrayDefinition {
         names[1] = "Arkadiy";
         names[2] = "Suyzana";
         names[3] = "Akakiy";
-        for (int i = 0; i < names.length; i++) {
-            System.out.println(names[i]);
+        for (String name : names) {
+            System.out.println(name);
         }
         System.out.println(ages.length);
         System.out.println(surnames.length);
