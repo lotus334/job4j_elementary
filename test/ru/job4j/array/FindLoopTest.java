@@ -63,4 +63,15 @@ public class FindLoopTest {
         int expect = -1;
         assertThat(result, is(expect));
     }
+
+    @Test
+    public void whenArrayHas4Start4Finish4() {
+        int[] input = new int[] {5, 1, 10, 1, 4};
+        int value = 4;
+        int start = 4;
+        int finish = 4;
+        int result = FindLoop.indexOf(input, value, start, finish);
+        int expect = 4;
+        assertThat(result, is(expect));
+    }
 }
