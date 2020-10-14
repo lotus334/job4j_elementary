@@ -4,10 +4,10 @@ public class ArrayLoop {
     public static void main(String[] args) {
         int[] arrayOfInts = new int[5];
         for (int i = 0; i < arrayOfInts.length; i++) {
-            arrayOfInts[i] = i * 2 + 3;
+            arrayOfInts[i] = i;
         }
-        for (int arrayOfInt : arrayOfInts) {
-            System.out.println(arrayOfInt);
+        for (int i = 0; i < arrayOfInts.length; i += 2) {
+            System.out.println(arrayOfInts[i]);
         }
     }
 }
