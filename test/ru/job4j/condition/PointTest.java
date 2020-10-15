@@ -48,4 +48,50 @@ public class PointTest {
         double expected = 5;
         Assert.assertEquals(expected, out, 0.01);
     }
+
+
+    @Test
+    public void when000To200Then2() {
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(2, 0, 0);
+        double out = a.distance3d(b);
+        int expected = 2;
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when000To034Then5() {
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(0, 3, 4);
+        double out = a.distance3d(b);
+        double expected = 5;
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when043To201Then2828() {
+        Point a = new Point(0, 4, 3);
+        Point b = new Point(0, 2, 1);
+        double out = a.distance3d(b);
+        double expected = 2.828;
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when000To000Then0() {
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(0, 0, 0);
+        double out = a.distance3d(b);
+        double expected = 0;
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when00Min3To0Min40Then0() {
+        Point a = new Point(0, 0, -3);
+        Point b = new Point(0, -4, 0);
+        double out = a.distance3d(b);
+        double expected = 5;
+        Assert.assertEquals(expected, out, 0.01);
+    }
 }
