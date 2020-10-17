@@ -7,7 +7,7 @@ public class Matches {
         Scanner scanner = new Scanner(System.in);
         int matches = 11;
         int counter = 0;
-        int choose = 0;
+        int choose;
         while (matches > 0) {
             System.out.printf("Осталось %d спичек\n", matches);
             if (counter % 2 == 0) {
@@ -23,6 +23,6 @@ public class Matches {
             }
             matches -= choose;
         }
-        System.out.printf("Игра завершена!");
+        System.out.printf("Игра завершена! Победил %s игрок", counter % 2 == 0 ? "второй" : "первый");
     }
 }
