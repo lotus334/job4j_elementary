@@ -46,29 +46,22 @@ public class Merge {
         int leftIndex = 0;
         int rightIndex = 0;
         int resultIndex = 0;
-        int min;
-        boolean leftLess = false;
-        while (resultIndex < left.length + right.length) {
-            min = Integer.MAX_VALUE;
-            if (rightIndex < right.length) {
-                min = Math.min(right[rightIndex], min);
-                leftLess = false;
-            }
-            if (leftIndex < left.length) {
-                if (left[leftIndex] == min) {
+        int min = Integer.MAX_VALUE;
+        while (resultIndex < result.length) {
+            if (leftIndex < left.length && rightIndex < right.length) {
+                min = Math.min(left[leftIndex], right[rightIndex]);
+                if (min == left[leftIndex]) {
                     leftIndex++;
-                    result[resultIndex++] = min;
-                } else if (left[leftIndex] < min) {
-                    min = left[leftIndex];
-                    leftLess = true;
+                } else if (min == right[rightIndex]) {
+                    rightIndex++;
                 }
+            } else if (leftIndex >= left.length) {
+                min = right[rightIndex++];
+            } else if (rightIndex >= right.length) {
+                min = left[leftIndex++];
             }
-            result[resultIndex++] = min;
-            if (leftLess) {
-                leftIndex++;
-            } else {
-                rightIndex++;
-            }
+            result[resultIndex] = min;
+            resultIndex++;
         }
         return result;
     }
